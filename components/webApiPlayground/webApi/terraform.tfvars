@@ -1,2 +1,2 @@
-WebApiPlaygroundLocation = "West Europe"
+WebApiPlaygroundLocation          = "West Europe"
 WebApiPlaygroundResourceGroupName = "rg-webApiPlayground"
