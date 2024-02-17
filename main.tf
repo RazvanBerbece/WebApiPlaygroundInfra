@@ -4,6 +4,6 @@ module "infraStateStore" {
 }
 
 # Applications
-# module "webApiPlayground" {
-#   source = "./apps/webApiPlayground"
-# }
+module "webApiPlayground" {
+  source = "./apps/webApiPlayground"
+}
