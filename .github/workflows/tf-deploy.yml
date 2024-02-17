@@ -25,6 +25,7 @@ jobs:
     secrets: inherit
 
   tf-deploy:
+    environment: staging
     needs: [tf-quality-check]
     runs-on: ubuntu-latest
     if: needs.tf-quality-check.result == 'success'
@@ -38,6 +39,10 @@ jobs:
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           dry_run: true
+      
+      - name: Run 'terraform init'
+        run: |
+          terraform init -upgrade
       
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
