@@ -38,9 +38,6 @@ jobs:
         id: validate
         run: terraform validate -no-color
 
-      - name: Run 'terraform show'
-        run: terraform show
-
       - name: Run 'terraform plan'
         id: planStep
         run: |
