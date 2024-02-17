@@ -49,14 +49,10 @@ jobs:
       - name: Run 'terraform init'
         run: |
           terraform init -input=false
-
-      - name: Run 'terraform plan'
-        run: |
-          terraform plan -out=tfplan -input=false
       
       - name: Run 'terraform apply'
         run: |
-          terraform apply -input=false tfplan -auto-approve
+          terraform apply -input=false -auto-approve
       
       - name: Create GitHub release
         uses: ncipollo/release-action@v1
