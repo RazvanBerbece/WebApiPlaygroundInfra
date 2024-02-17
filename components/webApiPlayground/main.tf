@@ -1,3 +1,0 @@
-module "webApi" {
-  source = "./webApi"
-}

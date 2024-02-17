@@ -24,7 +24,7 @@ jobs:
     uses: ./.github/workflows/tf-quality-check.yml
     secrets: inherit
 
-  deploy:
+  tf-deploy:
     needs: [tf-quality-check]
     runs-on: ubuntu-latest
     if: needs.tf-quality-check.result == 'success'

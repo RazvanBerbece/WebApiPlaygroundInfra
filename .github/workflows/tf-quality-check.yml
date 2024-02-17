@@ -10,17 +10,15 @@ env:
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+  TF_IN_AUTOMATION: "1"
 
 jobs:
 
   terraform:
-
-    name: Terraform Quality
     runs-on: ubuntu-latest
 
     steps:
-
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
