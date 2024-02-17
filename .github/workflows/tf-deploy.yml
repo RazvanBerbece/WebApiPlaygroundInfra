@@ -49,7 +49,7 @@ jobs:
 
       - name: Run 'terraform init'
         run: |
-          terraform init -input=false
+          terraform init -input=false -upgrade
       
       - name: Run 'terraform apply'
         run: |
