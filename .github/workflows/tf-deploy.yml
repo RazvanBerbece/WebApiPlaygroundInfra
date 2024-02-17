@@ -17,6 +17,7 @@ env:
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+  TF_IN_AUTOMATION: "1"
 
 jobs:
 
@@ -40,18 +41,22 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           default_bump: major
       
-      - name: Run 'terraform init'
-        run: |
-          terraform init -upgrade
-      
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.1.7
+
+      - name: Run 'terraform init'
+        run: |
+          terraform init -input=false
+
+      - name: Run 'terraform plan'
+        run: |
+          terraform plan -out=tfplan -input=false
       
       - name: Run 'terraform apply'
         run: |
-          terraform apply -auto-approve
+          terraform apply -input=false tfplan -auto-approve
       
       - name: Create GitHub release
         uses: ncipollo/release-action@v1
