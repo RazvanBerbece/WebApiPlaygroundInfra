@@ -21,14 +21,14 @@ jobs:
         with:
           terraform_version: 1.1.7
       
-      - name: Run 'terraform fmt'
-        id: fmt
-        run: terraform fmt -check -recursive
-      
       - name: Run 'terraform init'
         id: init
         run: |
           terraform init -upgrade
+
+      - name: Run 'terraform fmt'
+        id: fmt
+        run: terraform fmt -check -recursive
       
       - name: Run 'terraform validate'
         id: validate
