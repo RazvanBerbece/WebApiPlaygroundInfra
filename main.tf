@@ -1,6 +1,6 @@
 # Admin and Globals
 module "infraStateStore" {
-  source = "./global/tf-backend"
+  source = "./global/terraform-backend-store"
 }
 
 module "acr" {
