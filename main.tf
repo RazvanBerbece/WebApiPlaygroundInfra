@@ -1,3 +1,8 @@
+# AD and Service Principals
+module "ad" {
+  source = "./global/service-principals"
+}
+
 # Admin and Globals
 module "infraStateStore" {
   source = "./global/terraform-backend-store"
