@@ -3,12 +3,21 @@ output "adapp_webapi_client_id" {
   value = module.ad.adapp_webapi_sp_client_id
 }
 
+output "sp_webapi_app_client_name" {
+  value = module.ad.sp_webapi_name
+}
+
 output "sp_webapi_app_client_id" {
   value = module.ad.sp_webapi_app_client_id
 }
 
 output "sp_webapi_app_tenant_id" {
   value = module.ad.sp_webapi_app_tenant_id
+}
+
+output "sp_webapi_password" {
+  value     = module.ad.sp_webapi_password
+  sensitive = true
 }
 
 # TF State Backend Storage

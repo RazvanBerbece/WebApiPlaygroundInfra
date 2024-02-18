@@ -11,3 +11,7 @@ resource "azuread_service_principal" "webapi-sp" {
   app_role_assignment_required = false
   owners                       = [data.azuread_client_config.current.object_id]
 }
+
+resource "azuread_service_principal_password" "webapi-sp-password" {
+  service_principal_id = azuread_service_principal.webapi-sp.object_id
+}
