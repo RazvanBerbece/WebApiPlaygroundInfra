@@ -9,4 +9,8 @@ resource "azurerm_container_registry" "acr" {
   location            = azurerm_resource_group.container-registry-resource-group.location
   sku                 = "Basic"
   admin_enabled       = false
+
+  identity {
+    type = "SystemAssigned"
+  }
 }
