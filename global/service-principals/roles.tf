@@ -10,7 +10,8 @@ resource "azurerm_role_definition" "webapi-app-sp-app-admin-role" {
       "Microsoft.App/containerApps/revisions/restart/action",
       "Microsoft.App/locations/containerappoperationresults/read",
       "Microsoft.App/containerApps/write",
-      "Microsoft.App/containerApps/read"
+      "Microsoft.App/containerApps/read",
+      "Microsoft.App/containerApps/listSecrets/action"
     ]
     not_actions = []
   }
