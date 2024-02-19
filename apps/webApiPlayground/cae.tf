@@ -11,6 +11,10 @@ resource "azurerm_container_app" "webapi-capp" {
   resource_group_name          = azurerm_resource_group.webapi-resource-group.name
   revision_mode                = "Single"
 
+  ingress {
+    external_enabled = true
+  }
+
   template {
     min_replicas = 1
     max_replicas = 1
