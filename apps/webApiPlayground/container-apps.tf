@@ -10,7 +10,7 @@ resource "azurerm_container_app" "webapi-capp" {
 
     container {
       name   = "webapiplayground"
-      image  = "acrwebapiplayground.azurecr.io/webapi:latest"
+      image  = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
       cpu    = 0.25
       memory = "0.5Gi"
     }
