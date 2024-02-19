@@ -6,7 +6,7 @@ resource "azurerm_container_app" "webapi-capp" {
 
   template {
     min_replicas = 1
-    max_replicas = 1
+    max_replicas = 2
 
     container {
       name   = "webapiplayground"
