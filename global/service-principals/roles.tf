@@ -11,7 +11,8 @@ resource "azurerm_role_definition" "webapi-app-sp-app-admin-role" {
       "Microsoft.App/locations/containerappoperationresults/read",
       "Microsoft.App/containerApps/write",
       "Microsoft.App/containerApps/read",
-      "Microsoft.App/containerApps/listSecrets/action"
+      "Microsoft.App/containerApps/listSecrets/action",
+      "Microsoft.App/managedEnvironments/join/action"
     ]
     not_actions = []
   }
