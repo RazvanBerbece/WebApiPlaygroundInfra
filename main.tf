@@ -1,6 +1,8 @@
 # AD and Service Principals
 module "ad" {
   source = "./global/service-principals"
+
+  subscription_id = var.subscription_id
 }
 
 # Admin and Globals
