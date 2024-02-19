@@ -22,8 +22,6 @@ jobs:
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.1.7
       
       - name: Run 'terraform init'
         id: init
@@ -41,7 +39,7 @@ jobs:
       - name: Run 'terraform plan'
         id: planStep
         run: |
-          terraform plan
+          terraform plan -input=false
       
       - name: Update PR with Terraform quality step outputs
         uses: actions/github-script@0.9.0
