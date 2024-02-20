@@ -1,5 +1,5 @@
 resource "azurerm_role_assignment" "webapi-sp-role-assignment-acr" {
-  scope                = "/subscriptions/${var.subscription_id}/resourceGroups/global-rg-acr/providers/Microsoft.ContainerRegistry/registries/acrwebapiplayground"
+  scope                = "/subscriptions/${var.subscription_id}"
   role_definition_name = "Contributor"
   principal_id         = azuread_service_principal.webapi-sp.id
 }
